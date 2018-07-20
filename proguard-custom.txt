@@ -99,6 +99,9 @@
 -keepclassmembers public class okhttp3.** { *;}
 -keepclassmembers public class okio.** { *;}
 -keepclassmembers public class org.conscrypt.** { *;}
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
 
 -keep public class * extends org.apache.cordova.CordovaPlugin
 
@@ -159,3 +162,12 @@
 -dontwarn android.net.SSLCertificateSocketFactory
 -dontwarn android.net.http.*
 -dontwarn com.google.gms.*
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
