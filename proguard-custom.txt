@@ -55,6 +55,16 @@
 
 # keeps project specific packages
 -keep class com.google.gms.** { *; }
+
+-keep class org.codehaus.groovy.** { *; }
+-keep class groovy.** { *; }
+-keep class org.gradle.** { *; }
+-keep class com.squareup.** { *; }
+-keep class javax.annotation.** { *; }
+-keep class org.conscrypt.** { *; }
+-keep class ish.de.ibm.** { *; }
+-keep class com.trusteer.tas.** { *; }
+
 -keep class com.google.android.gms.** { *; }
 -keep class com.ibm.de.ish.** { *; }
 -keep class okhttp3.** { *;}
@@ -64,6 +74,16 @@
 -keep public class * extends com.ibm.de.ish.**
 -keep public class * extends okhttp3.**
 -keep public class * extends okio.**
+
+-keep public class * extends org.codehaus.groovy.** { *; }
+-keep public class * extends groovy.** { *; }
+-keep public class * extends org.gradle.** { *; }
+-keep public class * extends com.squareup.** { *; }
+-keep public class * extends javax.annotation.** { *; }
+-keep public class * extends org.conscrypt.** { *; }
+-keep public class * extends ish.de.ibm.** { *; }
+-keep public class * extends com.trusteer.tas.** { *; }
+
 -keepclassmembers public class com.google.gms.** { *; }
 -keepclassmembers public class com.google.android.gms.** { *; }
 -keepclassmembers public class com.ibm.de.ish.** { *; }
