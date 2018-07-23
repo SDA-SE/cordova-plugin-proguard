@@ -107,7 +107,7 @@
 -keep class org.azeckoski.reflectutils.** { *;}
 
 
--keep class com.ibm.de.ish.photo.gui.core.scanDocument.MainActivityPhoto
+-keep class com.ibm.de.ish.photo.gui.core.** { *; }
 
 -keep class android.support.v4.** { *; }
 
@@ -124,6 +124,7 @@
 -keep public class * extends com.google.gms.**
 -keep public class * extends com.google.android.gms.**
 -keep public class * extends com.ibm.**
+-keep public class * extends com.ibm.de.ish.photo.gui.**
 -keep public class * extends okhttp3.**
 -keep public class * extends okio.**
 -keep public class * extends org.conscrypt.**
@@ -135,6 +136,7 @@
 
 -keep public class * extends org.codehaus.** { *; }
 -keep public class * extends groovy.** { *; }
+-keep public class * extends org.codehaus.groovy.** { *; }
 -keep public class * extends org.gradle.** { *; }
 -keep public class * extends com.squareup.** { *; }
 -keep public class * extends javax.annotation.** { *; }
@@ -145,6 +147,7 @@
 -keepclassmembers public class com.google.gms.** { *; }
 -keepclassmembers public class com.google.android.gms.** { *; }
 -keepclassmembers public class com.ibm.** { *; }
+-keepclassmembers public class com.ibm.de.ish.photo.gui.** { *; }
 -keepclassmembers public class okhttp3.** { *;}
 -keepclassmembers public class okio.** { *;}
 -keepclassmembers public class org.conscrypt.** { *;}
