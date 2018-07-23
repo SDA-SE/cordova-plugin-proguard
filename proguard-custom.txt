@@ -36,7 +36,8 @@
 
 # Annotations are represented by attributes that have no direct effect on the execution of the code. 
 #-keepattributes *Annotation*,Signature
--keepparameternames 
+-keepparameternames
+-ignorewarnings
 
 # These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
 -renamesourcefileattribute SourceFile 
@@ -91,7 +92,7 @@
 -keep class com.squareup.** { *; }
 -keep class javax.annotation.** { *; }
 -keep class org.conscrypt.** { *; }
--keep class com.trusteer.tas.** { *; }
+-keep class com.trusteer.** { *; }
 
 -keep class com.google.android.gms.** { *; }
 -keep class com.ibm.** { *; }
@@ -101,6 +102,8 @@
 -keep class org.opencv.** { *;}
 -keep class org.eclipse.paho.** { *;}
 -keep class ish.de.ibm.com.bluepostboxsdk.** { *;}
+-keep class android.app.** { *;}
+
 
 
 
@@ -111,6 +114,8 @@
 -keep interface org.codehaus.groovy.** { *;}
 -keep interface org.gradle.** { *;}
 -keep interface ish.de.ibm.com.bluepostboxsdk.** { *;}
+-keep interface android.app.** { *;}
+
 
 -keep public class * extends com.google.gms.**
 -keep public class * extends com.google.android.gms.**
@@ -121,6 +126,7 @@
 -keep public class * extends org.opencv.**
 -keep public class * extends org.eclipse.paho.**
 -keep public class * extends ish.de.ibm.com.bluepostboxsdk.**
+-keep public class * extends android.app.** { *;}
 
 -keep public class * extends org.codehaus.** { *; }
 -keep public class * extends groovy.** { *; }
@@ -129,7 +135,7 @@
 -keep public class * extends javax.annotation.** { *; }
 -keep public class * extends org.conscrypt.** { *; }
 -keep public class * extends ish.de.ibm.** { *; }
--keep public class * extends com.trusteer.tas.** { *; }
+-keep public class * extends com.trusteer.** { *; }
 
 -keepclassmembers public class com.google.gms.** { *; }
 -keepclassmembers public class com.google.android.gms.** { *; }
@@ -215,3 +221,7 @@
 
 -dontnote org.apache.http.**
 -dontnote android.net.http.**
+-dontnote org.eclipse.paho.**
+-dontnote com.google.**
+-dontnote com.trusteer.taz.**
+-dontnote okhttp3.**
