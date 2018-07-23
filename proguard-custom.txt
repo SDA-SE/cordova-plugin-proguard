@@ -25,6 +25,10 @@
 #-injars      libs
 #-outjars     bin/classes-processed.jar
 
+-injars
+-outjars
+-printmapping out.map
+
 # Using Google's License Verification Library 
 -keep class com.android.vending.licensing.ILicensingService
 
@@ -33,11 +37,39 @@
 -verbose
 
 # Annotations are represented by attributes that have no direct effect on the execution of the code. 
--keepattributes *Annotation*
+#-keepattributes *Annotation*,Signature
+-keepparameternames 
 
--keepclassmembers enum * {
+# These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
+-renamesourcefileattribute SourceFile 
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,
+                SourceFile,LineNumberTable,*Annotation*,EnclosingMethod 
+                
+-keep public class * { 
+      public protected *; 
+} 
+
+-keepclassmembernames class * { 
+    java.lang.Class class$(java.lang.String); 
+    java.lang.Class class$(java.lang.String, boolean); 
+} 
+
+-keepclasseswithmembernames,includedescriptorclasses class * { 
+    native <methods>; 
+} 
+
+-keepclassmembers,allowoptimization enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements java.io.Serializable { 
+    static final long serialVersionUID; 
+    private static final java.io.ObjectStreamField[] serialPersistentFields; 
+    private void writeObject(java.io.ObjectOutputStream); 
+    private void readObject(java.io.ObjectInputStream); 
+    java.lang.Object writeReplace(); 
+    java.lang.Object readResolve(); 
 }
 
 -keepattributes InnerClasses
@@ -46,9 +78,7 @@
     <fields>;
 }
 
-# These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
--renamesourcefileattribute SourceFile    
--keepattributes SourceFile,LineNumberTable
+
 
 # Enable proguard with Cordova
 -keep class org.apache.cordova.** { *; }
