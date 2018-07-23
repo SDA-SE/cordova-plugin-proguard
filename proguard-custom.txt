@@ -25,7 +25,7 @@
 #-injars      libs
 #-outjars     bin/classes-processed.jar
 
--printmapping out.map
+#-printmapping out.map
 
 # Using Google's License Verification Library 
 -keep class com.android.vending.licensing.ILicensingService
@@ -37,7 +37,8 @@
 # Annotations are represented by attributes that have no direct effect on the execution of the code. 
 #-keepattributes *Annotation*,Signature
 -keepparameternames
--ignorewarnings
+
+#-ignorewarnings
 
 # These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
 -renamesourcefileattribute SourceFile 
@@ -105,7 +106,7 @@
 -keep class android.app.** { *;}
 
 
-
+-keep class android.support.v4.** { *; }
 
 -keep interface com.ibm.de.ish.photo.gui.** { *;}
 -keep interface com.google.android.gms.common.api.** { *;}
@@ -143,6 +144,7 @@
 -keepclassmembers public class okhttp3.** { *;}
 -keepclassmembers public class okio.** { *;}
 -keepclassmembers public class org.conscrypt.** { *;}
+-keepclassmembers public class android.app.** { *;}
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
@@ -225,3 +227,6 @@
 -dontnote com.google.**
 -dontnote com.trusteer.taz.**
 -dontnote okhttp3.**
+-dontnote android.support.v4.**
+-dontnote android.arch.**
+-dontnote android.app.**
