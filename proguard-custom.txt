@@ -26,7 +26,7 @@
 #-outjars     bin/classes-processed.jar
 
 -injars
--outjars
+-outjars bin/classes-processed.jar
 -printmapping out.map
 
 # Using Google's License Verification Library 
