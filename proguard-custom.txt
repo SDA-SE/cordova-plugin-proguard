@@ -25,7 +25,7 @@
 #-injars      libs
 #-outjars     bin/classes-processed.jar
 
--injars
+-injars libs
 -outjars bin/classes-processed.jar
 -printmapping out.map
 
