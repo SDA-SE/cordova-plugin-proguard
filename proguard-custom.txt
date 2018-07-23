@@ -63,21 +63,27 @@
 -keep class com.squareup.** { *; }
 -keep class javax.annotation.** { *; }
 -keep class org.conscrypt.** { *; }
--keep class ish.de.ibm.** { *; }
 -keep class com.trusteer.tas.** { *; }
 
 -keep class com.google.android.gms.** { *; }
--keep class com.ibm.de.ish.** { *; }
+-keep class com.ibm.** { *; }
 -keep class okhttp3.** { *;}
 -keep class okio.** { *;}
 -keep class javax.annotation.** { *;}
 -keep class org.opencv.** { *;}
 -keep class org.eclipse.paho.** { *;}
 
+
+-keep interface com.ibm.de.ish.photo.gui.** { *;}
+-keep interface com.google.android.gms.common.api.** { *;}
+-keep interface org.gradle.** { *;}
+-keep interface groovy.** { *;}
+-keep interface org.codehaus.groovy.** { *;}
+-keep interface org.gradle.** { *;}
+
 -keep public class * extends com.google.gms.**
 -keep public class * extends com.google.android.gms.**
--keep public class * extends com.google.android.gms.**
--keep public class * extends com.ibm.de.ish.**
+-keep public class * extends com.ibm.**
 -keep public class * extends okhttp3.**
 -keep public class * extends okio.**
 -keep public class * extends org.conscrypt.**
@@ -95,7 +101,7 @@
 
 -keepclassmembers public class com.google.gms.** { *; }
 -keepclassmembers public class com.google.android.gms.** { *; }
--keepclassmembers public class com.ibm.de.ish.** { *; }
+-keepclassmembers public class com.ibm.** { *; }
 -keepclassmembers public class okhttp3.** { *;}
 -keepclassmembers public class okio.** { *;}
 -keepclassmembers public class org.conscrypt.** { *;}
@@ -161,7 +167,10 @@
 -dontwarn android.support.v4.**
 -dontwarn android.net.SSLCertificateSocketFactory
 -dontwarn android.net.http.*
--dontwarn com.google.gms.*
+-dontwarn com.google.gms.**
+-dontwarn com.google.android.**
+-dontwarn com.ibm.**
+-dontwarn okhttp3.**
 # JSR 305 annotations are for embedding nullability information.
 -dontwarn javax.annotation.**
 
