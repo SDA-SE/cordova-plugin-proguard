@@ -72,6 +72,8 @@
 -keep class javax.annotation.** { *;}
 -keep class org.opencv.** { *;}
 -keep class org.eclipse.paho.** { *;}
+-keep class ish.de.ibm.com.bluepostboxsdk.** { *;}
+
 
 
 -keep interface com.ibm.de.ish.photo.gui.** { *;}
@@ -80,6 +82,7 @@
 -keep interface groovy.** { *;}
 -keep interface org.codehaus.groovy.** { *;}
 -keep interface org.gradle.** { *;}
+-keep interface ish.de.ibm.com.bluepostboxsdk.** { *;}
 
 -keep public class * extends com.google.gms.**
 -keep public class * extends com.google.android.gms.**
@@ -89,6 +92,7 @@
 -keep public class * extends org.conscrypt.**
 -keep public class * extends org.opencv.**
 -keep public class * extends org.eclipse.paho.**
+-keep public class * extends ish.de.ibm.com.bluepostboxsdk.**
 
 -keep public class * extends org.codehaus.** { *; }
 -keep public class * extends groovy.** { *; }
@@ -180,3 +184,6 @@
 
 # OkHttp platform used only on JVM and when Conscrypt dependency is available.
 -dontwarn okhttp3.internal.platform.ConscryptPlatform
+
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
