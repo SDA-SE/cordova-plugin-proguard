@@ -47,10 +47,8 @@
     <fields>;
 }
 
-
 # Annotations are represented by attributes that have no direct effect on the execution of the code. 
 -keepparameternames
-
 
 # These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
 -renamesourcefileattribute SourceFile 
@@ -64,7 +62,6 @@
 # Using Google's License Verification Library 
 -keep class com.android.vending.licensing.ILicensingService
 
-
 -keep class org.codehaus.groovy.** { *; }
 -keep class groovy.** { *; }
 -keep class org.gradle.** { *; }
@@ -72,8 +69,6 @@
 -keep class javax.annotation.** { *; }
 -keep class org.conscrypt.** { *; }
 -keep class com.trusteer.** { *; }
-
--keep class com.google.android.gms.** { *; }
 -keep class com.ibm.** { *; }
 -keep class okhttp3.** { *;}
 -keep class okio.** { *;}
@@ -84,14 +79,11 @@
 -keep class android.app.** { *;}
 -keep class org.azeckoski.reflectutils.** { *;}
 -keep class javax.annotation.** { *;}
-
 -keep class com.squareup.okhttp3.** { *; }
--keep interface com.squareup.okhttp3.** { *; }
-
 -keep class com.ibm.de.ish.photo.gui.core.** { *; }
-
 -keep class android.support.v4.** { *; }
 
+-keep interface com.squareup.okhttp3.** { *; }
 -keep interface com.ibm.de.ish.photo.gui.** { *;}
 -keep interface com.google.android.gms.common.api.** { *;}
 -keep interface org.gradle.** { *;}
@@ -125,7 +117,6 @@
 -keep public class * extends ish.de.ibm.** { *; }
 -keep public class * extends com.trusteer.** { *; }
 -keep public class * extends javax.annotation.** { *; }
-
 
 -keepclassmembers public class javax.annotation.** { *; }
 -keepclassmembers public class groovy.** { *; }
@@ -172,9 +163,6 @@
 
 # apache.http
 -optimizations !class/merging/vertical*,!class/merging/horizontal*,!code/simplification/arithmetic,!field/*,!code/allocation/variable
-
-
-
 
 -keepclassmembers enum * {
     public static **[] values();
