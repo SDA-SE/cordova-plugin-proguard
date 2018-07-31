@@ -12,7 +12,7 @@
 # Enable proguard with Cordova
 -keep class org.apache.cordova.** { *; }
 
-# To get more information during processing
+# Enable to get more information during processing
 -verbose
 
 -optimizationpasses 5
@@ -108,76 +108,9 @@
 # Using Google's License Verification Library 
 -keep class com.android.vending.licensing.ILicensingService
 
--keep class org.codehaus.groovy.** { *; }
--keep class groovy.** { *; }
--keep class org.gradle.** { *; }
--keep class com.squareup.** { *; }
--keep class javax.annotation.** { *; }
--keep class org.conscrypt.** { *; }
--keep class com.ibm.** { *; }
--keep class okhttp3.** { *;}
--keep class okio.** { *;}
--keep class javax.annotation.** { *;}
--keep class org.opencv.** { *;}
--keep class org.eclipse.paho.** { *;}
--keep class ish.de.ibm.com.bluepostboxsdk.** { *;}
--keep class android.app.** { *;}
--keep class org.azeckoski.reflectutils.** { *;}
--keep class javax.annotation.** { *;}
--keep class com.squareup.okhttp3.** { *; }
--keep class com.ibm.de.ish.photo.gui.core.** { *; }
--keep class android.support.v4.** { *; }
-
--keep interface com.squareup.okhttp3.** { *; }
--keep interface com.ibm.de.ish.photo.gui.** { *;}
--keep interface com.google.android.gms.common.api.** { *;}
--keep interface org.gradle.** { *;}
--keep interface groovy.** { *;}
--keep interface org.codehaus.groovy.** { *;}
--keep interface ish.de.ibm.com.bluepostboxsdk.** { *;}
--keep interface android.app.** { *;}
--keep interface javax.annotation.** { *;}
-
--keep public class * extends com.google.gms.**
--keep public class * extends com.google.android.gms.**
--keep public class * extends com.ibm.**
--keep public class * extends com.ibm.de.ish.photo.gui.**
--keep public class * extends okhttp3.**
--keep public class * extends okio.**
--keep public class * extends org.conscrypt.**
--keep public class * extends org.opencv.**
--keep public class * extends org.eclipse.paho.**
--keep public class * extends ish.de.ibm.com.bluepostboxsdk.**
--keep public class * extends android.app.**
--keep public class * extends org.azeckoski.reflectutils.**
--keep public class * extends javax.annotation.** 
-
--keep public class * extends org.codehaus.** { *; }
--keep public class * extends groovy.** { *; }
--keep public class * extends org.codehaus.groovy.** { *; }
--keep public class * extends org.gradle.** { *; }
--keep public class * extends com.squareup.** { *; }
--keep public class * extends javax.annotation.** { *; }
--keep public class * extends org.conscrypt.** { *; }
--keep public class * extends ish.de.ibm.** { *; }
--keep public class * extends javax.annotation.** { *; }
-
--keepclassmembers public class javax.annotation.** { *; }
--keepclassmembers public class groovy.** { *; }
--keepclassmembers public class org.codehaus.groovy.** { *; }
--keepclassmembers public class com.google.gms.** { *; }
--keepclassmembers public class com.google.android.gms.** { *; }
--keepclassmembers public class com.ibm.** { *; }
--keepclassmembers public class com.ibm.de.ish.photo.gui.** { *; }
--keepclassmembers public class okhttp3.** { *;}
--keepclassmembers public class okio.** { *;}
--keepclassmembers public class org.conscrypt.** { *;}
--keepclassmembers public class android.app.** { *;}
-
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
--keep class org.codehaus.** { *; }
 -keep public class * extends org.apache.cordova.CordovaPlugin
 
 -keep class com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader { java.lang.ClassLoader sClassLoader; }
@@ -197,7 +130,7 @@
 -keep class me.leolin.shortcutbadger.impl.XiaomiHomeBadger { ** extraNotification; }
 
 # apache.http
--optimizations !class/merging/*,!class/merging/horizontal*,!code/simplification/arithmetic,!field/*,!code/allocation/variable
+-optimizations !class/merging/*,!code/simplification/arithmetic,!field/*,!code/allocation/variable
 
 -keepclassmembers enum * {
     public static **[] values();
@@ -206,7 +139,11 @@
 
 # Remove debug logs in release build. More logs could be removed
 -assumenosideeffects class android.util.Log {
-    public static *** d(...);
+        public static *** e(...);
+        public static *** w(...);
+        public static *** d(...);
+        public static *** v(...);
+        public static *** i(...);
 }
 
 # Enable proguard with Google libs
