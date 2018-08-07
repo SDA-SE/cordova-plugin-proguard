@@ -18,13 +18,13 @@
     "plugin"
   ],
   "author": {
-    "name": "Aleksandr Filatov",
-    "email": "greybax@gmail.com",
-    "url": "https://alfilatov.com"
+    "name": "",
+    "email": "",
+    "url": ""
   },
-  "license": "MIT",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/greybax/cordova-plugin-proguard/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/greybax/cordova-plugin-proguard#readme"
+  "homepage": ""
 }
